@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inscriptions à CAPET : Candidatez maintenant pour l'année 2026.">
+  <title>Inscriptions | CAPET - École Technique</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .form-group.error input,
+    .form-group.error textarea,
+    .form-group.error select {
+      border-color: var(--error-color);
+      background-color: rgba(231, 76, 60, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span>CAPET</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="programs.html">Programmes</a></li>
+        <li><a href="levels.html">Niveaux</a></li>
+        <li><a href="admission.html" class="active">Inscriptions</a></li>
+        <li><a href="gallery.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== PAGE HEADER ========== -->
+    <section class="hero" style="padding: 3rem 2rem;">
+      <div class="hero-content">
+        <h1>Candidature & Inscriptions</h1>
+        <p>Rejoins CAPET et transforme ton avenir professionnel</p>
+      </div>
+    </section>
+
+    <!-- ========== INFORMATIONS GÉNÉRALES ========== -->
+    <section class="container">
+      <div class="section-title">
+        <h2>Processus d'Admission</h2>
+        <p class="section-subtitle">Four étapes simples pour rejoindre CAPET</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card text-center">
+          <div style="font-size: 2rem; color: var(--secondary-color); font-weight: 700; margin-bottom: 1rem;">1</div>
+          <h4>Remplir le Formulaire</h4>
+          <p>Complète tous les champs obligatoires avec précision</p>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2rem; color: var(--secondary-color); font-weight: 700; margin-bottom: 1rem;">2</div>
+          <h4>Fournir les Documents</h4>
+          <p>Copie certificat + diplômes + pièce d'identité</p>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2rem; color: var(--secondary-color); font-weight: 700; margin-bottom: 1rem;">3</div>
+          <h4>Test & Entretien</h4>
+          <p>Évaluation des compétences et motivation (sur site)</p>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2rem; color: var(--secondary-color); font-weight: 700; margin-bottom: 1rem;">4</div>
+          <h4>Confirmation</h4>
+          <p>Notification de résultat par email sous 5 jours</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FORMULAIRE D'ADMISSION ========== -->
+    <section class="container" style="background-color: #f8f9fa; margin: -4rem 0 0; padding-top: 4rem;">
+      <div class="section-title">
+        <h2>Formulaire de Candidature</h2>
+        <p class="section-subtitle">Tous les champs marqués * sont obligatoires</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <form id="admissionForm">
+          <!-- INFORMATIONS PERSONNELLES -->
+          <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; box-shadow: var(--shadow-light);">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">📝 Informations Personnelles</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">Prénom *</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Nom de famille *</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="birthDate">Date de naissance *</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+              </div>
+              <div class="form-group">
+                <label for="gender">Sexe *</label>
+                <select id="gender" name="gender" required>
+                  <option value="">-- Sélectionner --</option>
+                  <option value="male">Masculin</option>
+                  <option value="female">Féminin</option>
+                  <option value="other">Autre</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="nationality">Nationalité *</label>
+              <input type="text" id="nationality" name="nationality" placeholder="Ex: Togolaise" required>
+            </div>
+
+            <div class="form-group">
+              <label for="idNumber">Numéro de pièce d'identité *</label>
+              <input type="text" id="idNumber" name="idNumber" placeholder="Passeport ou CNI" required>
+            </div>
+          </div>
+
+          <!-- COORDONNÉES DE CONTACT -->
+          <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; box-shadow: var(--shadow-light);">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">📞 Coordonnées de Contact</h3>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Téléphone mobile *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+228 XX XX XX XX" required>
+              </div>
+              <div class="form-group">
+                <label for="phone2">Téléphone alternatif</label>
+                <input type="tel" id="phone2" name="phone2">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Adresse de résidence *</label>
+              <input type="text" id="address" name="address" placeholder="Rue, numéro, quartier" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">Ville *</label>
+                <input type="text" id="city" name="city" value="Lomé" required>
+              </div>
+              <div class="form-group">
+                <label for="postalCode">Code postal</label>
+                <input type="text" id="postalCode" name="postalCode">
+              </div>
+            </div>
+          </div>
+
+          <!-- INFORMATIONS SCOLAIRES -->
+          <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; box-shadow: var(--shadow-light);">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">🎓 Parcours Scolaire</h3>
+
+            <div class="form-group">
+              <label for="currentLevel">Dernier niveau d'études atteint *</label>
+              <select id="currentLevel" name="currentLevel" required>
+                <option value="">-- Sélectionner --</option>
+                <option value="3eme">Fin de collège (3e)</option>
+                <option value="2nde">Classe de 2nde</option>
+                <option value="1ere">Classe de 1ère</option>
+                <option value="terminale">Terminale</option>
+                <option value="cap">CAP</option>
+                <option value="bp">Brevet Professionnel</option>
+                <option value="bts">BTS ou supérieur</option>
+                <option value="autodidacte">Autodidacte / Expérience professionnelle</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="lastSchool">Derniers établissement fréquenté *</label>
+              <input type="text" id="lastSchool" name="lastSchool" placeholder="Nom du lycée/école" required>
+            </div>
+
+            <div class="form-group">
+              <label for="graduationYear">Année d'obtention du diplôme *</label>
+              <input type="number" id="graduationYear" name="graduationYear" min="2015" max="2026" required>
+            </div>
+
+            <div class="form-group">
+              <label for="academicResult">Moyenne générale (si disponible)</label>
+              <input type="text" id="academicResult" name="academicResult" placeholder="Ex: 14/20">
+            </div>
+          </div>
+
+          <!-- CHOIX DE FILIÈRE ========== -->
+          <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; box-shadow: var(--shadow-light);">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">🎯 Choix de Programme</h3>
+
+            <div class="form-group">
+              <label for="program">Filière intéressante *</label>
+              <select id="program" name="program" required>
+                <option value="">-- Sélectionner une filière --</option>
+                <option value="informatique">💻 Informatique & Réseaux</option>
+                <option value="mecanique">⚙️ Mécanique & Automatisation</option>
+                <option value="electricite">⚡ Électricité & Énergie</option>
+                <option value="batiment">🏗️ Bâtiment & Travaux Publics</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="level">Niveau d'entrée *</label>
+              <select id="level" name="level" required>
+                <option value="">-- Sélectionner un niveau --</option>
+                <option value="cap">CAP (1 an)</option>
+                <option value="bp">Brevet Professionnel (2 ans)</option>
+                <option value="bts">BTS Équivalent (2 ans)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="format">Format d'études *</label>
+              <select id="format" name="format" required>
+                <option value="">-- Sélectionner un format --</option>
+                <option value="fulltime">À temps plein (jours)</option>
+                <option value="semifull">Semi-professionnel (soirs + samedis)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- INFORMATION SUPPLÉMENTAIRE ========== -->
+          <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; box-shadow: var(--shadow-light);">
+            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">💼 Expérience & Motivation</h3>
+
+            <div class="form-group">
+              <label for="experience">Avez-vous une expérience professionnelle ?</label>
+              <textarea id="experience" name="experience" placeholder="Décrivez vos expériences (optionnel)"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="motivation">Pourquoi voulez-vous rejoindre CAPET ? *</label>
+              <textarea id="motivation" name="motivation" placeholder="Expliquez votre motivation et vos objectifs professionnels" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="findUs">Comment avez-vous connu CAPET ? *</label>
+              <select id="findUs" name="findUs" required>
+                <option value="">-- Sélectionner --</option>
+                <option value="website">Site web</option>
+                <option value="facebook">Facebook</option>
+                <option value="instagram">Instagram</option>
+                <option value="tiktok">TikTok</option>
+                <option value="referral">Recommandation</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- DOCUMENTS À FOURNIR ========== -->
+          <div style="background: #fff3cd; padding: 1.5rem; border-radius: var(--radius); margin-bottom: 2rem; border-left: 4px solid var(--warning-color);">
+            <h4 style="color: #856404; margin-bottom: 1rem;">📋 Documents Requis</h4>
+            <p style="color: #856404; font-size: 0.95rem; margin-bottom: 1rem;">
+              Les documents suivants seront demandés lors de l'entretien :
+            </p>
+            <ul style="color: #856404; font-size: 0.95rem; margin-left: 1rem;">
+              <li>✓ Copie du certificat de fin d'études primaires ou collégiales</li>
+              <li>✓ Copie des derniers diplômes/bulletins scolaires</li>
+              <li>✓ Copie de la pièce d'identité (CNI ou Passeport)</li>
+              <li>✓ Photo d'identité (4x4 cm)</li>
+              <li>✓ Certificat de naissance</li>
+            </ul>
+          </div>
+
+          <!-- CONDITIONS D'ADMISSION ========== -->
+          <div class="form-group">
+            <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-weight: normal;">
+              <input type="checkbox" id="conditions" name="conditions" required style="margin-top: 0.3rem;">
+              <span>J'accepte les conditions d'admission et la politique de confidentialité de CAPET *</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-weight: normal;">
+              <input type="checkbox" id="newsletter" name="newsletter" style="margin-top: 0.3rem;">
+              <span>Je souhaite recevoir des informations et actualités de CAPET par email</span>
+            </label>
+          </div>
+
+          <!-- BOUTONS ========== -->
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <button type="submit" class="btn btn-primary" style="flex: 1; width: 100%;">
+              ✓ Soumettre ma Candidature
+            </button>
+            <button type="reset" class="btn" style="flex: 1; width: 100%; background-color: #e0e0e0; color: var(--dark-text); border: none;">
+              Réinitialiser
+            </button>
+          </div>
+
+          <p style="text-align: center; color: var(--light-text); font-size: 0.9rem; margin-top: 1rem;">
+            Votre candidature sera traitée sous 5 jours ouvrables.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== CRITÈRES DE SÉLECTION ========== -->
+    <section class="container">
+      <div class="section-title">
+        <h2>Critères de Sélection</h2>
+        <p class="section-subtitle">Ce que nous regardons lors de votre candidature</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>📚 Niveau Académique</h3>
+          <p>Votre parcours scolaire antérieur et votre moyenne générale sont importants pour évaluer votre potentiel d'apprentissage.</p>
+        </div>
+
+        <div class="card">
+          <h3>🎯 Motivation</h3>
+          <p>Votre clarté de vision professionnelle et votre détermination à réussir sont essentielles pour votre succès à CAPET.</p>
+        </div>
+
+        <div class="card">
+          <h3>💼 Compétences Techniques</h3>
+          <p>Vos aptitudes en mathématiques, logique et compétences manuelles sont évaluées lors du test d'entrée.</p>
+        </div>
+
+        <div class="card">
+          <h3>🧠 Soft Skills</h3>
+          <p>Votre communication, travail en équipe et capacité d'adaptation sont observées lors de l'entretien.</p>
+        </div>
+
+        <div class="card">
+          <h3>⏰ Disponibilité</h3>
+          <p>Votre engagement à suivre le cursus complet et respecter les horaires de formation est vérifiée.</p>
+        </div>
+
+        <div class="card">
+          <h3>✨ Potentiel de Croissance</h3>
+          <p>Au-delà du profil académique, nous cherchons le potentiel et la capacité à progresser rapidement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ADMISSION ========== -->
+    <section class="container" style="background-color: #f8f9fa; margin: -4rem 0 0; padding-top: 4rem;">
+      <div class="section-title">
+        <h2>Questions Fréquemment Posées</h2>
+        <p class="section-subtitle">Réponses à vos questions sur l'admission</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1rem;">
+          <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Q: Quel est l'âge minimum pour postuler ?</h4>
+          <p style="color: var(--light-text);">R: L'âge minimum est 16 ans. Il n'y a pas d'âge maximum. Nous accueillons les adultes en reconversion.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1rem;">
+          <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Q: Dois-je avoir un diplôme pour postuler ?</h4>
+          <p style="color: var(--light-text);">R: Non, les autodidactes avec expérience professionnelle sont les bienvenus. Nous évaluons chaque profil individuellement.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1rem;">
+          <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Q: Quel est le coût de la formation ?</h4>
+          <p style="color: var(--light-text);">R: CAP: 150K FCFA/an | BP: 180K FCFA/an | BTS: 220K FCFA/an. Des aides financières et plans de paiement sont disponibles.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1rem;">
+          <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Q: Puis-je obtenir une bourse ou aide financière ?</h4>
+          <p style="color: var(--light-text);">R: Oui, nous proposons une réduction de 25% pour les candidats excellence et des plans de paiement échelonnés.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1rem;">
+          <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Q: Combien de temps pour connaître le résultat ?</h4>
+          <p style="color: var(--light-text);">R: Vous serez notifié dans les 5 jours ouvrables suivant votre entretien par email ou SMS.</p>
+        </div>
+
+        <div class="card">
+          <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Q: Puis-je visiter l'école avant de postuler ?</h4>
+          <p style="color: var(--light-text);">R: Oui ! Nous proposons des visites guidées gratuites chaque jeudi de 10h à 12h. Contactez-nous pour organiser.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA CONTACT ========== -->
+    <section class="container">
+      <div style="background: linear-gradient(135deg, var(--primary-color) 0%, #1a2e57 100%); 
+                  color: white; 
+                  padding: 3rem 2rem; 
+                  border-radius: var(--radius); 
+                  text-align: center;">
+        <h2 style="color: white;">Des Questions sur Ton Admission ?</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">
+          Notre équipe est là pour t'aider et répondre à toutes tes questions.
+        </p>
+        <a href="contact.html" class="btn btn-secondary">Nous Contacter</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>À Propos</h3>
+        <p>CAPET est un établissement d'enseignement technique moderne au Togo, offrant des formations professionnalisantes reconnues.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À Propos</a></li>
+          <li><a href="programs.html">Programmes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>📍 KEGUE – AGOE, Lomé, Togo</p>
+        <p>📞 +228 93 21 85 99</p>
+        <p>✉️ cpl.capet@gmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024-2026 CAPET - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

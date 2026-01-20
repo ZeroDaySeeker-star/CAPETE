@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galerie photos et vidéos de CAPET : Découvrez notre campus et nos installations.">
+  <title>Galerie | CAPET - École Technique</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+      transition: transform 0.3s ease-out;
+      cursor: pointer;
+      aspect-ratio: 1;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .gallery-item:hover img {
+      opacity: 0.8;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(31, 58, 112, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay-icon {
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+    }
+
+    .lightbox.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--secondary-color);
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      border: 2px solid var(--primary-color);
+      background: white;
+      color: var(--primary-color);
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .filter-btn:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span>CAPET</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="programs.html">Programmes</a></li>
+        <li><a href="levels.html">Niveaux</a></li>
+        <li><a href="admission.html">Inscriptions</a></li>
+        <li><a href="gallery.html" class="active">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== PAGE HEADER ========== -->
+    <section class="hero" style="padding: 3rem 2rem;">
+      <div class="hero-content">
+        <h1>Galerie Médias</h1>
+        <p>Découvrez les installations et la vie à CAPET</p>
+      </div>
+    </section>
+
+    <!-- ========== GALERIE ========== -->
+    <section class="container">
+      <div class="section-title">
+        <h2>Photos & Vidéos</h2>
+        <p class="section-subtitle">Explorez notre campus et nos installations modernes</p>
+      </div>
+
+      <!-- Filtres -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterGallery('all')">Tous</button>
+        <button class="filter-btn" onclick="filterGallery('campus')">Campus</button>
+        <button class="filter-btn" onclick="filterGallery('classes')">Salles de classe</button>
+        <button class="filter-btn" onclick="filterGallery('labo')">Laboratoires</button>
+        <button class="filter-btn" onclick="filterGallery('evenements')">Événements</button>
+      </div>
+
+      <!-- Galerie Grid -->
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="campus" onclick="openLightbox('https://via.placeholder.com/400x400?text=Campus1')">
+          <img src="https://via.placeholder.com/400x400?text=Campus1" alt="Campus CAPET">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="classes" onclick="openLightbox('https://via.placeholder.com/400x400?text=Classe1')">
+          <img src="https://via.placeholder.com/400x400?text=Classe1" alt="Salle de classe">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="labo" onclick="openLightbox('https://via.placeholder.com/400x400?text=Labo1')">
+          <img src="https://via.placeholder.com/400x400?text=Labo1" alt="Laboratoire informatique">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="labo" onclick="openLightbox('https://via.placeholder.com/400x400?text=Labo2')">
+          <img src="https://via.placeholder.com/400x400?text=Labo2" alt="Atelier mécanique">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="campus" onclick="openLightbox('https://via.placeholder.com/400x400?text=Campus2')">
+          <img src="https://via.placeholder.com/400x400?text=Campus2" alt="Entrance campus">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="evenements" onclick="openLightbox('https://via.placeholder.com/400x400?text=Event1')">
+          <img src="https://via.placeholder.com/400x400?text=Event1" alt="Événement">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="classes" onclick="openLightbox('https://via.placeholder.com/400x400?text=Classe2')">
+          <img src="https://via.placeholder.com/400x400?text=Classe2" alt="Salle de cours">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="labo" onclick="openLightbox('https://via.placeholder.com/400x400?text=Labo3')">
+          <img src="https://via.placeholder.com/400x400?text=Labo3" alt="Labo électricité">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="evenements" onclick="openLightbox('https://via.placeholder.com/400x400?text=Event2')">
+          <img src="https://via.placeholder.com/400x400?text=Event2" alt="Événement étudiants">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="campus" onclick="openLightbox('https://via.placeholder.com/400x400?text=Campus3')">
+          <img src="https://via.placeholder.com/400x400?text=Campus3" alt="Campus extérieur">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="classes" onclick="openLightbox('https://via.placeholder.com/400x400?text=Classe3')">
+          <img src="https://via.placeholder.com/400x400?text=Classe3" alt="Cours pratique">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="labo" onclick="openLightbox('https://via.placeholder.com/400x400?text=Labo4')">
+          <img src="https://via.placeholder.com/400x400?text=Labo4" alt="Atelier BTP">
+          <div class="gallery-overlay">
+            <div class="gallery-overlay-icon">🔍</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== VIDÉOS YOUTUBE ========== -->
+    <section class="container" style="background-color: #f8f9fa; margin: -4rem 0 0; padding-top: 4rem;">
+      <div class="section-title">
+        <h2>Nos Vidéos</h2>
+        <p class="section-subtitle">Présentation vidéo de CAPET et de ses programmes</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow-light);">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Présentation CAPET" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow-light);">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Visite Campus" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow-light);">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Témoignage étudiant" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow-light);">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Programmes CAPET" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ALBUMS PHOTOS ========== -->
+    <section class="container">
+      <div class="section-title">
+        <h2>Albums Spéciaux</h2>
+        <p class="section-subtitle">Parcourez nos albums photos organisés</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">📸</div>
+          <h3>Rentrée 2025</h3>
+          <p style="color: var(--light-text); margin-bottom: 1rem;">45 photos de la cérémonie de rentrée</p>
+          <a href="#" class="text-accent" style="font-weight: 600;">Voir l'album →</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🏆</div>
+          <h3>Événements & Prix</h3>
+          <p style="color: var(--light-text); margin-bottom: 1rem;">Événements et remise de récompenses</p>
+          <a href="#" class="text-accent" style="font-weight: 600;">Voir l'album →</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">👥</div>
+          <h3>Vie Étudiante</h3>
+          <p style="color: var(--light-text); margin-bottom: 1rem;">Moments de vie à CAPET</p>
+          <a href="#" class="text-accent" style="font-weight: 600;">Voir l'album →</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🔧</div>
+          <h3>Ateliers & Travaux</h3>
+          <p style="color: var(--light-text); margin-bottom: 1rem;">Photos des travaux pratiques</p>
+          <a href="#" class="text-accent" style="font-weight: 600;">Voir l'album →</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎓</div>
+          <h3>Remise de Diplômes</h3>
+          <p style="color: var(--light-text); margin-bottom: 1rem;">Cérémonie de promotion 2025</p>
+          <a href="#" class="text-accent" style="font-weight: 600;">Voir l'album →</a>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🌍</div>
+          <h3>Partenariats</h3>
+          <p style="color: var(--light-text); margin-bottom: 1rem;">Visites et échanges internationaux</p>
+          <a href="#" class="text-accent" style="font-weight: 600;">Voir l'album →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="container">
+      <div style="background: linear-gradient(135deg, var(--primary-color) 0%, #1a2e57 100%); 
+                  color: white; 
+                  padding: 3rem 2rem; 
+                  border-radius: var(--radius); 
+                  text-align: center;">
+        <h2 style="color: white;">Envie de Découvrir CAPET ?</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">
+          Visite notre campus chaque jeudi de 10h à 12h pour découvrir nos installations.
+        </p>
+        <a href="contact.html" class="btn btn-secondary">Planifier une Visite</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>À Propos</h3>
+        <p>CAPET est un établissement d'enseignement technique moderne au Togo, offrant des formations professionnalisantes reconnues.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À Propos</a></li>
+          <li><a href="programs.html">Programmes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>📍 KEGUE – AGOE, Lomé, Togo</p>
+        <p>📞 +228 93 21 85 99</p>
+        <p>✉️ cpl.capet@gmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024-2026 CAPET - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Filtrer la galerie
+    function filterGallery(category) {
+      // Mettre à jour les boutons actifs
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Filtrer les items
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact CAPET : Nous trouver, nous appeler, nous écrire. Localisation, horaires et formulaire de contact.">
+  <title>Contact | CAPET - École Technique</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-icon">📚</span>
+        <span>CAPET</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À Propos</a></li>
+        <li><a href="programs.html">Programmes</a></li>
+        <li><a href="levels.html">Niveaux</a></li>
+        <li><a href="admission.html">Inscriptions</a></li>
+        <li><a href="gallery.html">Galerie</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== PAGE HEADER ========== -->
+    <section class="hero" style="padding: 3rem 2rem;">
+      <div class="hero-content">
+        <h1>Nous Contacter</h1>
+        <p>Nous sommes à votre écoute pour vos questions et préoccupations</p>
+      </div>
+    </section>
+
+    <!-- ========== INFORMATIONS DE CONTACT ========== -->
+    <section class="container">
+      <div class="grid grid-3">
+        <div class="card text-center">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📍</div>
+          <h3>Localisation</h3>
+          <p style="color: var(--light-text);">
+            KEGUE – AGOE<br>
+            Lomé, Togo
+          </p>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📞</div>
+          <h3>Téléphones</h3>
+          <p style="color: var(--light-text);">
+            +228 93 21 85 99<br>
+            +228 98 91 73 43
+          </p>
+        </div>
+
+        <div class="card text-center">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">✉️</div>
+          <h3>Email</h3>
+          <p style="color: var(--light-text);">
+            <a href="mailto:cpl.capet@gmail.com">cpl.capet@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HORAIRES & LOCALISATION ========== -->
+    <section class="container" style="background-color: #f8f9fa; margin: -4rem 0 0; padding-top: 4rem;">
+      <div class="grid grid-2">
+        <!-- HORAIRES -->
+        <div class="card">
+          <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">⏰ Horaires d'Ouverture</h2>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Lundi à Vendredi</h4>
+            <p style="color: var(--light-text);">08:00 - 18:00</p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Samedi</h4>
+            <p style="color: var(--light-text);">09:00 - 16:00</p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Dimanche</h4>
+            <p style="color: var(--light-text);">Fermé</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, var(--primary-color) 0%, #1a2e57 100%); 
+                      color: white; 
+                      padding: 1rem; 
+                      border-radius: var(--radius); 
+                      margin-top: 1.5rem;">
+            <h4 style="color: white; margin-bottom: 0.5rem;">📋 Visites Guidées</h4>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Chaque jeudi de 10h à 12h</p>
+            <p style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8);">Gratuit sur inscription préalable</p>
+          </div>
+        </div>
+
+        <!-- CARTE GOOGLE MAPS -->
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <iframe style="width: 100%; height: 100%; min-height: 400px; border: none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.2447535836056!2d1.2407!3d6.1256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x101fbf63c7c4c4c7%3A0x4d0e0e0e0e0e0e0e!2sKEGUE%20%E2%80%93%20AGOE%2C%20Lom%C3%A9!5e0!3m2!1sfr!2stg!4v0000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FORMULAIRE DE CONTACT ========== -->
+    <section class="container">
+      <div class="section-title">
+        <h2>Envoyez-nous un Message</h2>
+        <p class="section-subtitle">Contactez-nous avec le formulaire ci-dessous</p>
+      </div>
+
+      <div style="max-width: 700px; margin: 0 auto;">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactFirstName">Prénom *</label>
+              <input type="text" id="contactFirstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+              <label for="contactLastName">Nom *</label>
+              <input type="text" id="contactLastName" name="lastName" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactEmail">Email *</label>
+              <input type="email" id="contactEmail" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Téléphone</label>
+              <input type="tel" id="contactPhone" name="phone">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Sujet *</label>
+            <select id="subject" name="subject" required>
+              <option value="">-- Sélectionner un sujet --</option>
+              <option value="admission">Question sur l'admission</option>
+              <option value="programs">Information sur les programmes</option>
+              <option value="fees">Question sur les frais</option>
+              <option value="visit">Demande de visite campus</option>
+              <option value="partnership">Partenariat / Collaboration</option>
+              <option value="job">Opportunité d'emploi</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre message ici..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-weight: normal;">
+              <input type="checkbox" id="privacy" name="privacy" required style="margin-top: 0.3rem;">
+              <span>J'accepte la politique de confidentialité et le traitement de mes données *</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer le Message</button>
+
+          <p style="text-align: center; color: var(--light-text); font-size: 0.9rem; margin-top: 1rem;">
+            Nous vous répondrons dans les 24 heures ouvrables.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== RÉSEAUX SOCIAUX ========== -->
+    <section class="container" style="background-color: #f8f9fa; margin: -4rem 0 0; padding-top: 4rem;">
+      <div class="section-title">
+        <h2>Suivez-nous sur les Réseaux Sociaux</h2>
+        <p class="section-subtitle">Restez connecté avec l'actualité de CAPET</p>
+      </div>
+
+      <div class="grid grid-4">
+        <a href="#" style="text-decoration: none;">
+          <div class="card text-center" style="cursor: pointer; transition: transform 0.3s; border-top: 4px solid #3b5998;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">f</div>
+            <h3 style="color: #3b5998;">Facebook</h3>
+            <p style="color: var(--light-text); font-size: 0.9rem;">@CAPET Togo</p>
+            <p style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem;">5 200 followers</p>
+          </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;">
+          <div class="card text-center" style="cursor: pointer; transition: transform 0.3s; border-top: 4px solid #E1306C;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📷</div>
+            <h3 style="color: #E1306C;">Instagram</h3>
+            <p style="color: var(--light-text); font-size: 0.9rem;">@capet_togo</p>
+            <p style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem;">3 800 followers</p>
+          </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;">
+          <div class="card text-center" style="cursor: pointer; transition: transform 0.3s; border-top: 4px solid #000;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🎵</div>
+            <h3 style="color: #000;">TikTok</h3>
+            <p style="color: var(--light-text); font-size: 0.9rem;">@capet_togo</p>
+            <p style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem;">2 100 followers</p>
+          </div>
+        </a>
+
+        <a href="#" style="text-decoration: none;">
+          <div class="card text-center" style="cursor: pointer; transition: transform 0.3s; border-top: 4px solid #0A66C2;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">in</div>
+            <h3 style="color: #0A66C2;">LinkedIn</h3>
+            <p style="color: var(--light-text); font-size: 0.9rem;">CAPET Togo</p>
+            <p style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem;">1 500 followers</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== FAQ CONTACT ========== -->
+    <section class="container">
+      <div class="section-title">
+        <h2>Questions Fréquemment Posées</h2>
+        <p class="section-subtitle">Retrouvez les réponses aux questions courantes</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1rem; cursor: pointer;" onclick="toggleAnswer(this)">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="color: var(--secondary-color); margin: 0;">Q: Quels sont les délais de réponse aux emails ?</h4>
+            <span style="font-size: 1.5rem;">▼</span>
+          </div>
+          <p class="answer" style="display: none; color: var(--light-text); margin-top: 1rem;">R: Nous traitons les emails dans les 24 heures ouvrables (lundi-vendredi). Pour les questions urgentes, appelez-nous directement au +228 93 21 85 99.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1rem; cursor: pointer;" onclick="toggleAnswer(this)">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="color: var(--secondary-color); margin: 0;">Q: Puis-je visiter le campus sans rendez-vous ?</h4>
+            <span style="font-size: 1.5rem;">▼</span>
+          </div>
+          <p class="answer" style="display: none; color: var(--light-text); margin-top: 1rem;">R: Les visites guidées gratuites sont organisées chaque jeudi de 10h à 12h. Nous recommandons une inscription préalable, mais vous pouvez venir sans rendez-vous durant ces horaires.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1rem; cursor: pointer;" onclick="toggleAnswer(this)">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="color: var(--secondary-color); margin: 0;">Q: Comment puis-je parler à un conseiller d'orientation ?</h4>
+            <span style="font-size: 1.5rem;">▼</span>
+          </div>
+          <p class="answer" style="display: none; color: var(--light-text); margin-top: 1rem;">R: Vous pouvez demander une consultation gratuite en remplissant le formulaire de contact ou en appelant le +228 98 91 73 43. Les consultations durent environ 30 minutes.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 1rem; cursor: pointer;" onclick="toggleAnswer(this)">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="color: var(--secondary-color); margin: 0;">Q: Y a-t-il un secrétariat ou accueil spécifique ?</h4>
+            <span style="font-size: 1.5rem;">▼</span>
+          </div>
+          <p class="answer" style="display: none; color: var(--light-text); margin-top: 1rem;">R: Oui, notre secrétariat est disponible du lundi au vendredi de 08h à 18h et le samedi de 09h à 16h. L'équipe administrative peut traiter vos demandes d'inscription, documents, etc.</p>
+        </div>
+
+        <div class="card" style="cursor: pointer;" onclick="toggleAnswer(this)">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4 style="color: var(--secondary-color); margin: 0;">Q: Puis-je contacter CAPET via WhatsApp ?</h4>
+            <span style="font-size: 1.5rem;">▼</span>
+          </div>
+          <p class="answer" style="display: none; color: var(--light-text); margin-top: 1rem;">R: Oui, vous pouvez nous envoyer un message sur WhatsApp au +228 98 91 73 43 pour des questions rapides. Nous répondons généralement dans les 2 heures ouvrables.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="container">
+      <div style="background: linear-gradient(135deg, var(--primary-color) 0%, #1a2e57 100%); 
+                  color: white; 
+                  padding: 3rem 2rem; 
+                  border-radius: var(--radius); 
+                  text-align: center;">
+        <h2 style="color: white;">Prêt à Commencer ?</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">
+          Contactez-nous ou visite notre campus pour découvrir CAPET de près.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="admission.html" class="btn btn-secondary">Candidater Maintenant</a>
+          <a href="#contactForm" class="btn btn-secondary" style="background-color: rgba(255, 255, 255, 0.2);">Envoyer un Message</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>À Propos</h3>
+        <p>CAPET est un établissement d'enseignement technique moderne au Togo, offrant des formations professionnalisantes reconnues.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À Propos</a></li>
+          <li><a href="programs.html">Programmes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>📍 KEGUE – AGOE, Lomé, Togo</p>
+        <p>📞 +228 93 21 85 99</p>
+        <p>✉️ cpl.capet@gmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024-2026 CAPET - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function toggleAnswer(element) {
+      const answer = element.querySelector('.answer');
+      const toggle = element.querySelector('span');
+      if (answer.style.display === 'none') {
+        answer.style.display = 'block';
+        toggle.style.transform = 'rotate(180deg)';
+      } else {
+        answer.style.display = 'none';
+        toggle.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</body>
+</html>
